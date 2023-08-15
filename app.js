@@ -2,10 +2,14 @@ const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
 
+const quotesController = require("./controllers/quotesController");
+
 const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
+
+app.use("/quotes", quotesController);
 
 app.get("/", (req, res) => {
   res.send("Welcome to my quotes app!");
