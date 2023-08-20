@@ -13,6 +13,7 @@ const db = pgp(cn);
 
 db.connect()
   .then((obj) => {
+    const serverVersion = obj.client.serverVersion;
     console.log("Postgres connection established");
     obj.done();
   })

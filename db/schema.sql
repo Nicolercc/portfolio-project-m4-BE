@@ -5,10 +5,14 @@ CREATE DATABASE quotes_dev;
 
 \c quotes_dev;
 
+DROP TABLE IF EXISTS categories;
+
 CREATE TABLE categories (
     id SERIAL PRIMARY KEY,
     name TEXT NOT NULL
 );
+
+DROP TABLE IF EXISTS quotes;
 
 CREATE TABLE quotes(
     id SERIAL PRIMARY KEY,
